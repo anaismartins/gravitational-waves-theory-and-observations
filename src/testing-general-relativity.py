@@ -351,3 +351,42 @@ print(
     "Delta delta phi 3 = "
     + f"{Deltadeltaphi3:.2}\n\nThe results obtained here are one order of magnitude lower than those of the mentioned paper."
 )
+
+# f -------------------------------------------------------------------------------------
+
+print("\n\nExercise f)\n")
+
+with open("answers.txt", "a") as file:
+    file.write("\n\nExercise f)\n")
+
+theta = symbols("A Mc eta tc Phiref phi_2 deltaphi3")
+theta = list(theta)
+
+S0 = 1e-50  # Hz
+
+Sn = (
+    S0
+    * (
+        2.39e-27 * (f / 100) ** (-15.64)
+        + 0.349 * (f / 100) ** -2.145
+        + 1.76 * (f / 100) ** -0.12
+        + 0.409 * (f / 100) ** 1.1
+    )
+    ** 2
+)
+
+fmin = 5  # Hz
+
+Psi_new3 = Psi_new + theta[6] * (-16) * pi * vc ** (3) * 3 / (128 * theta[2] * vc**5)
+h = best_A * f ** (-7 / 6) * sym_exp(I * Psi_new3)
+
+subst = [
+    (theta[1], Mc),
+    (theta[2], eta),
+    (theta[3], tc),
+    (theta[4], Phiref),
+    (theta[5], phi_2),
+    (theta[6], deltaphi3),
+]
+
+new_snr = SNR(subst)
