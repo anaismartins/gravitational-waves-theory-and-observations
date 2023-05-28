@@ -6,12 +6,12 @@ The full fisher matrix with A included is
 0.0 6.4e+09 -6.7e+08 -7.5e+08 1.6e+06 
 0.0 -6.7e+08 9.9e+07 2.1e+08 -3e+05 
 0.0 -7.5e+08 2.1e+08 1.1e+09 -9.1e+05 
--0.0 1.6e+06 -3e+05 -9.1e+05 1.1e+03 
+-0.0 1.6e+06 -3e+05 -9.1e+05 1e+03 
 
 But like we found out in exercise b, Gamma_0i and Gamma_i0, with i <> 0, are all zeros, so we can/will use only Gamma_ij, with i, j <> 0: 6.4e+09 -6.7e+08 -7.5e+08 1.6e+06 
 -6.7e+08 9.9e+07 2.1e+08 -3e+05 
 -7.5e+08 2.1e+08 1.1e+09 -9.1e+05 
-1.6e+06 -3e+05 -9.1e+05 1.1e+03 
+1.6e+06 -3e+05 -9.1e+05 1e+03 
 
 The Sigma matrix is
 2.9e-09 6.8e-08 5.4e-09 2e-05 
@@ -27,14 +27,24 @@ Exercise d)The new fisher matrix (without A and with phi-2) is
 6.4e+09 -6.7e+08 -7.5e+08 1.6e+06 -3.4e+11 
 -6.7e+08 9.9e+07 2.1e+08 -3e+05 3e+10 
 -7.5e+08 2.1e+08 1.1e+09 -9.1e+05 2.4e+10 
-1.6e+06 -3e+05 -9.1e+05 1.1e+03 -6.5e+07 
+1.6e+06 -3e+05 -9.1e+05 1e+03 -6.5e+07 
 -3.4e+11 3e+10 2.4e+10 -6.5e+07 2e+13 
 
 The new Sigma matrix is
 1.8e-07 1.5e-06 6.5e-08 0.00032 1.8e-09 
-1.5e-06 1.3e-05 6.6e-07 0.003 1.4e-08 
+1.5e-06 1.3e-05 6.6e-07 0.003 1.5e-08 
 6.5e-08 6.6e-07 4.1e-08 0.00016 6.1e-10 
 0.00032 0.003 0.00016 0.7 3.1e-06 
-1.8e-09 1.4e-08 6.1e-10 3.1e-06 1.8e-11 
+1.8e-09 1.5e-08 6.1e-10 3.1e-06 1.8e-11 
 
 delta phi-2 = 4.3e-06
+
+Binary stars are well-suited for this test of GR because:
+a) They have strong gravitational fields in their vicinities;
+b) They have high orbital velocities;
+c) They are considered accurate clocks
+
+Exercise e)
+Delta delta phi 3 = 0.089
+
+The results obtained here are one order of magnitude lower than those of the mentioned paper.

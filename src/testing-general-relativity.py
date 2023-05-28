@@ -240,14 +240,14 @@ print("delta Phiref = " + f"{deltaPhiref:.2}")
 print("\n\nExercise d)\n")
 
 with open("answers.txt", "a") as file:
-    file.write("\n\nExercise d)")
+    file.write("\n\nExercise d)\n")
 
 # A is not used/needed anymore but I'll leave it here because otherwise I would have to change everything
 theta = symbols("A Mc eta tc Phiref phi_2")
 theta = list(theta)
 
-Psi = Psi + theta[5] * vc ** (-2) * 3 / (128 * theta[2] * vc**5)
-h = best_A * f ** (-7 / 6) * sym_exp(I * Psi)
+Psi_new = Psi + theta[5] * vc ** (-2) * 3 / (128 * theta[2] * vc**5)
+h = best_A * f ** (-7 / 6) * sym_exp(I * Psi_new)
 
 phi_2 = 0
 
@@ -268,7 +268,7 @@ for i in range(1, 6):
 
     fisher_matrix_new.append(aux)
 
-print("The new fisher matrix (without Aand with phi-2) is\n")
+print("The new fisher matrix (without A and with phi-2) is\n")
 
 with open("answers.txt", "a") as file:
     file.write("The new fisher matrix (without A and with phi-2) is\n")
@@ -297,7 +297,57 @@ deltaphi_2 = np.sqrt(Sigma_new[4][4])
 with open("answers.txt", "a") as file:
     file.write(
         "\ndelta phi-2 = "
-        + f"{deltaphi_2:.2}\n\nBinary stars are well-suited for this test of GR because:\na) They have strong gravitational fields in their vicinities;\nb)They have high orbital velocities;\nc)They are considered accurate clocks "
+        + f"{deltaphi_2:.2}\n\nBinary stars are well-suited for this test of GR because:\na) They have strong gravitational fields in their vicinities;\nb) They have high orbital velocities;\nc) They are considered accurate clocks"
     )
 
-print("\ndelta phi-2 = " + f"{deltaphi_2:.2}\n")
+print(
+    "\ndelta phi-2 = "
+    + f"{deltaphi_2:.2}\n\nBinary stars are well-suited for this test of GR because:\na) They have strong gravitational fields in their vicinities;\nb) They have high orbital velocities;\nc) They are considered accurate clocks"
+)
+
+# e -------------------------------------------------------------------------------------
+
+print("\n\nExercise e)\n")
+
+with open("answers.txt", "a") as file:
+    file.write("\n\nExercise e)")
+
+theta = symbols("A Mc eta tc Phiref deltaphi3")
+theta = list(theta)
+
+Psi_new2 = Psi + theta[5] * (-16) * pi * vc ** (3) * 3 / (128 * theta[2] * vc**5)
+h = best_A * f ** (-7 / 6) * sym_exp(I * Psi_new2)
+
+deltaphi3 = 0
+
+subst = [
+    (theta[1], Mc),
+    (theta[2], eta),
+    (theta[3], tc),
+    (theta[4], Phiref),
+    (theta[5], deltaphi3),
+]
+
+fisher_matrix_new = []
+
+for i in range(1, 6):
+    aux = []
+    for j in range(1, 6):
+        aux.append(fisher(h, i, j, subst))
+
+    fisher_matrix_new.append(aux)
+
+Sigma_new = np.linalg.inv(fisher_matrix_new)
+
+Deltadeltaphi3 = np.sqrt(Sigma_new[4][4])
+
+with open("answers.txt", "a") as file:
+    file.write(
+        "\nDelta delta phi 3 = "
+        + f"{Deltadeltaphi3:.2}\n\nThe results obtained here are one order of magnitude lower than those of the mentioned paper."
+    )
+
+print(
+    "Delta delta phi 3 = "
+    + f"{Deltadeltaphi3:.2}\n\nThe results obtained here are one order of magnitude lower than those of the mentioned paper."
+)
