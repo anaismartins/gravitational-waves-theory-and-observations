@@ -23,7 +23,8 @@ delta Mc / Mc = 4.4e-05
 delta eta = 0.0014
 delta tc = 0.00014delta Phiref = 0.43
 
-Exercise d)The new fisher matrix (without A and with phi-2) is
+Exercise d)
+The new fisher matrix (without A and with phi-2) is
 6.4e+09 -6.7e+08 -7.5e+08 1.6e+06 -3.4e+11 
 -6.7e+08 9.9e+07 2.1e+08 -3e+05 3e+10 
 -7.5e+08 2.1e+08 1.1e+09 -9.1e+05 2.4e+10 
@@ -48,3 +49,9 @@ Exercise e)
 Delta delta phi 3 = 0.089
 
 The results obtained here are one order of magnitude lower than those of the mentioned paper.
+
+Exercise f)
+The new SNR is 417.9. This value is much higher than the original SNR, as expected, since the ET is meant to be a better detector than the ones we have now.
+Delta phi -2 = 5.5e-08
+Delta delta phi 3 = 0.0035
+

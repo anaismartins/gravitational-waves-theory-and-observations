@@ -390,3 +390,41 @@ subst = [
 ]
 
 new_snr = SNR(subst)
+
+with open("answers.txt", "a") as file:
+    file.write(
+        "The new SNR is "
+        + f"{new_snr:.1f}. This value is much higher than the original SNR, as expected, since the ET is meant to be a better detector than the ones we have now.\n"
+    )
+
+print(
+    "The new SNR is "
+    + f"{new_snr:.1f}. This value is much higher than the original SNR, as expected, since the ET is meant to be a better detector than the ones we have now."
+)
+
+fisher_matrix_new = []
+
+for i in range(1, 7):
+    aux = []
+    for j in range(1, 7):
+        aux.append(fisher(h, i, j, subst))
+
+    fisher_matrix_new.append(aux)
+
+Sigma_new = np.linalg.inv(fisher_matrix_new)
+
+Deltaphi_2 = np.sqrt(Sigma_new[4][4])
+Deltadeltaphi3 = np.sqrt(Sigma_new[5][5])
+
+with open("answers.txt", "a") as file:
+    file.write(
+        "Delta phi -2 = "
+        + f"{Deltaphi_2:.2}\nDelta delta phi 3 = "
+        + f"{Deltadeltaphi3:.2}\n\n"
+    )
+
+print(
+    "Delta phi -2 = "
+    + f"{Deltaphi_2:.2}\nDelta delta phi 3 = "
+    + f"{Deltadeltaphi3:.2}\n\n"
+)
