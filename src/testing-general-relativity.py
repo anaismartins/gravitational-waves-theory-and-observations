@@ -181,7 +181,7 @@ with open("answers.txt", "a") as file:
         print("\n", end="")
 
     file.write(
-        "\nBut like we found out in exercise b, Gamma_0i and Gamma_i0, with i <> 0, are all zeros, so we can/will use only Gamma_ij, with i, j <> 0: "
+        "\nBut like we found out in exercise b, Gamma_0i and Gamma_i0, with i <> 0, are all zeros, so we can/will use only Gamma_ij, with i, j <> 0:\n"
     )
 
 print(
@@ -225,15 +225,15 @@ deltatc = sqrtSigma[2][2]
 deltaPhiref = sqrtSigma[3][3]
 
 with open("answers.txt", "a") as file:
-    file.write("\ndelta Mc / Mc = " + f"{deltaMcMc:.2}\n")
-    file.write("delta eta = " + f"{deltaeta:.2}\n")
-    file.write("delta tc = " + f"{deltatc:.2}\n")
-    file.write("delta Phiref = " + f"{deltaPhiref:.2}")
+    file.write("\nDelta Mc / Mc = " + f"{deltaMcMc:.2}\n")
+    file.write("Delta eta = " + f"{deltaeta:.2}\n")
+    file.write("Delta tc = " + f"{deltatc:.2}\n")
+    file.write("Delta Phiref = " + f"{deltaPhiref:.2}")
 
-print("\ndelta Mc / Mc = " + f"{deltaMcMc:.2}")
-print("delta eta = " + f"{deltaeta:.2}")
-print("delta tc = " + f"{deltatc:.2}")
-print("delta Phiref = " + f"{deltaPhiref:.2}")
+print("\nDelta Mc / Mc = " + f"{deltaMcMc:.2}")
+print("Delta eta = " + f"{deltaeta:.2}")
+print("Delta tc = " + f"{deltatc:.2}")
+print("Delta Phiref = " + f"{deltaPhiref:.2}")
 
 # d ---------------------------------------------------------------------------------------------------
 
@@ -296,12 +296,12 @@ deltaphi_2 = np.sqrt(Sigma_new[4][4])
 
 with open("answers.txt", "a") as file:
     file.write(
-        "\ndelta phi-2 = "
+        "\nDelta phi-2 = "
         + f"{deltaphi_2:.2}\n\nBinary pulsars are well-suited for this test of GR because we can measure them through radio telescopes and get very accurate measurements of masses, as well as their orbitals because they have strong gravitational fields in their vicinities, high orbital velocities and they are considered accurate clocks"
     )
 
 print(
-    "\ndelta phi-2 = "
+    "\nDelta phi-2 = "
         + f"{deltaphi_2:.2}\n\nBinary pulsars are well-suited for this test of GR because we can measure them through radio telescopes and get very accurate measurements of masses, as well as their orbitals because they have strong gravitational fields in their vicinities, high orbital velocities and they are considered accurate clocks"
 )
 
