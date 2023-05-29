@@ -8,7 +8,7 @@ import random
 
 G = 6.67430e-11  # m3 kg-1 s-2
 msun = 1.989e30  # kg
-Gsun = G * 1.989e30
+Gsun = G * msun
 
 c = 3e8  # m s-1
 
@@ -65,7 +65,7 @@ def SNR(subst):
 
     snr = lambdify(f, snr_int.subs(subst))
 
-    snr_opt = sym.sqrt(4 * np.real(integrate.quad(snr, fmin, fmax)[0]))
+    snr_opt = sym.sqrt(4 * integrate.quad(snr, fmin, fmax)[0])
     return snr_opt
 
 
@@ -227,7 +227,7 @@ deltaPhiref = sqrtSigma[3][3]
 with open("answers.txt", "a") as file:
     file.write("\ndelta Mc / Mc = " + f"{deltaMcMc:.2}\n")
     file.write("delta eta = " + f"{deltaeta:.2}\n")
-    file.write("delta tc = " + f"{deltatc:.2}")
+    file.write("delta tc = " + f"{deltatc:.2}\n")
     file.write("delta Phiref = " + f"{deltaPhiref:.2}")
 
 print("\ndelta Mc / Mc = " + f"{deltaMcMc:.2}")
@@ -297,12 +297,12 @@ deltaphi_2 = np.sqrt(Sigma_new[4][4])
 with open("answers.txt", "a") as file:
     file.write(
         "\ndelta phi-2 = "
-        + f"{deltaphi_2:.2}\n\nBinary stars are well-suited for this test of GR because:\na) They have strong gravitational fields in their vicinities;\nb) They have high orbital velocities;\nc) They are considered accurate clocks"
+        + f"{deltaphi_2:.2}\n\nBinary pulsars are well-suited for this test of GR because we can measure them through radio telescopes and get very accurate measurements of masses, as well as their orbitals because they have strong gravitational fields in their vicinities, high orbital velocities and they are considered accurate clocks"
     )
 
 print(
     "\ndelta phi-2 = "
-    + f"{deltaphi_2:.2}\n\nBinary stars are well-suited for this test of GR because:\na) They have strong gravitational fields in their vicinities;\nb) They have high orbital velocities;\nc) They are considered accurate clocks"
+        + f"{deltaphi_2:.2}\n\nBinary pulsars are well-suited for this test of GR because we can measure them through radio telescopes and get very accurate measurements of masses, as well as their orbitals because they have strong gravitational fields in their vicinities, high orbital velocities and they are considered accurate clocks"
 )
 
 # e -------------------------------------------------------------------------------------

@@ -21,7 +21,8 @@ The Sigma matrix is
 
 delta Mc / Mc = 4.4e-05
 delta eta = 0.0014
-delta tc = 0.00014delta Phiref = 0.43
+delta tc = 0.00014
+delta Phiref = 0.43
 
 Exercise d)
 The new fisher matrix (without A and with phi-2) is
@@ -40,10 +41,7 @@ The new Sigma matrix is
 
 delta phi-2 = 4.3e-06
 
-Binary stars are well-suited for this test of GR because:
-a) They have strong gravitational fields in their vicinities;
-b) They have high orbital velocities;
-c) They are considered accurate clocks
+Binary pulsars are well-suited for this test of GR because we can measure them through radio telescopes and get very accurate measurements of masses, as well as their orbitals because they have strong gravitational fields in their vicinities, high orbital velocities and they are considered accurate clocks
 
 Exercise e)
 Delta delta phi 3 = 0.089
@@ -51,7 +49,7 @@ Delta delta phi 3 = 0.089
 The results obtained here are one order of magnitude lower than those of the mentioned paper.
 
 Exercise f)
-The new SNR is 417.9. This value is much higher than the original SNR, as expected, since the ET is meant to be a better detector than the ones we have now.
+The new SNR is 418.0. This value is much higher than the original SNR, as expected, since the ET is meant to be a better detector than the ones we have now.
 Delta phi -2 = 5.5e-08
 Delta delta phi 3 = 0.0035
 
