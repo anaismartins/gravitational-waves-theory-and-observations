@@ -18,7 +18,7 @@ SNRopt = 32.4
 
 print("Exercise c)")
 
-with open("answers.txt", "w") as file:
+with open("..\\output\\answers.txt", "w") as file:
     file.write("Exercise c)\n")
 
 f = symbols("f")
@@ -116,7 +116,7 @@ while snr_not_found:
         # max amount of iterations to try for
         snr_not_found = False
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write(
         "The closest I could get to the optimal SNR, "
         + str(SNRopt)
@@ -171,7 +171,7 @@ for i in range(0, 5):
 
 print("The full fisher matrix with A included is\n")
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("The full fisher matrix with A included is\n")
     for i in range(0, 5):
         for j in range(0, 5):
@@ -196,7 +196,7 @@ for i in range(1, 5):
         aux.append(fisher_matrix[i][j])
     crop_fisher.append(aux)
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     for i in range(0, 4):
         for j in range(0, 4):
             file.write(f"{crop_fisher[i][j]:.2}" + " ")
@@ -208,7 +208,7 @@ Sigma = np.linalg.inv(crop_fisher)
 
 print("\nThe Sigma matrix is\n")
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("\nThe Sigma matrix is" + "\n")
     for i in range(0, 4):
         for j in range(0, 4):
@@ -224,7 +224,7 @@ deltaeta = sqrtSigma[1][1]
 deltatc = sqrtSigma[2][2]
 deltaPhiref = sqrtSigma[3][3]
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("\nDelta Mc / Mc = " + f"{deltaMcMc:.2}\n")
     file.write("Delta eta = " + f"{deltaeta:.2}\n")
     file.write("Delta tc = " + f"{deltatc:.2}\n")
@@ -239,7 +239,7 @@ print("Delta Phiref = " + f"{deltaPhiref:.2}")
 
 print("\n\nExercise d)\n")
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("\n\nExercise d)\n")
 
 # A is not used/needed anymore but I'll leave it here because otherwise I would have to change everything
@@ -270,7 +270,7 @@ for i in range(1, 6):
 
 print("The new fisher matrix (without A and with phi-2) is\n")
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("The new fisher matrix (without A and with phi-2) is\n")
     for i in range(0, 5):
         for j in range(0, 5):
@@ -283,7 +283,7 @@ Sigma_new = np.linalg.inv(fisher_matrix_new)
 
 print("\nThe new Sigma matrix is\n")
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("\nThe new Sigma matrix is" + "\n")
     for i in range(0, 5):
         for j in range(0, 5):
@@ -294,7 +294,7 @@ with open("answers.txt", "a") as file:
 
 deltaphi_2 = np.sqrt(Sigma_new[4][4])
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write(
         "\nDelta phi-2 = "
         + f"{deltaphi_2:.2}\n\nBinary pulsars are well-suited for this test of GR because we can measure them through radio telescopes and get very accurate measurements of masses, as well as their orbitals because they have strong gravitational fields in their vicinities, high orbital velocities and they are considered accurate clocks"
@@ -309,7 +309,7 @@ print(
 
 print("\n\nExercise e)\n")
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("\n\nExercise e)")
 
 theta = symbols("A Mc eta tc Phiref deltaphi3")
@@ -341,7 +341,7 @@ Sigma_new = np.linalg.inv(fisher_matrix_new)
 
 Deltadeltaphi3 = np.sqrt(Sigma_new[4][4])
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write(
         "\nDelta delta phi 3 = "
         + f"{Deltadeltaphi3:.2}\n\nThe results obtained here are one order of magnitude lower than those of the mentioned paper."
@@ -356,7 +356,7 @@ print(
 
 print("\n\nExercise f)\n")
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write("\n\nExercise f)\n")
 
 theta = symbols("A Mc eta tc Phiref phi_2 deltaphi3")
@@ -391,7 +391,7 @@ subst = [
 
 new_snr = SNR(subst)
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write(
         "The new SNR is "
         + f"{new_snr:.1f}. This value is much higher than the original SNR, as expected, since the ET is meant to be a better detector than the ones we have now.\n"
@@ -416,7 +416,7 @@ Sigma_new = np.linalg.inv(fisher_matrix_new)
 Deltaphi_2 = np.sqrt(Sigma_new[4][4])
 Deltadeltaphi3 = np.sqrt(Sigma_new[5][5])
 
-with open("answers.txt", "a") as file:
+with open("..\\output\\answers.txt", "a") as file:
     file.write(
         "Delta phi -2 = "
         + f"{Deltaphi_2:.2}\nDelta delta phi 3 = "
