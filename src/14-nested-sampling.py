@@ -1,6 +1,7 @@
 import numpy as np
+import matplotlib.pyplot as plt
 
-sigma_x = 0.1
+sigma_x = 0.5
 sigma_y = 0.5
 
 xmin = -0.5
@@ -34,11 +35,12 @@ t = []
 
 X.append(1)
 
-posterior = 1
+posterior = []
+posterior.append(1)
 k = 0
 Z = 0
 
-while(posterior > 0.01):
+while(posterior[-1] > 0.01):
 
     min_index = L.index(min(L))
     Lmin = L[min_index]
@@ -60,7 +62,7 @@ while(posterior > 0.01):
     theta.pop(min_index)
     L.pop(min_index)
 
-    posterior = Lmin * X[-1] / Z
+    posterior.append(Lmin * X[-1] / Z)
 
     while(True):
         x = np.random.uniform(xmin, xmax)
@@ -72,5 +74,7 @@ while(posterior > 0.01):
             break
 
     k += 1
+
+posterior.pop(0)
 
 print("The integral value is " + str(Z) + ", with the actual value being 0.68267.")
